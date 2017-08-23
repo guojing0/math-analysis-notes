@@ -13,34 +13,56 @@
 
     \section{Basic Topology}
 
-    Metric (distance function) of $x_{0}$ and $x$: $d(x_{0}, x) = \lvert x - x_{0} \rvert$
+        Metric (distance function) of $x_{0}$ and $x$: $d(x_{0}, x) = \lvert x - x_{0} \rvert$
 
     \subsection{Metric Space}
 
-    Metric space $X$
+        Metric space $X$
 
-    \begin{equation}
-    d \colon M \times M \to \mathbf{R}
-    \end{equation}
+        \begin{equation}
+        d \colon M \times M \to \mathbf{R}
+        \end{equation}
 
-    \begin{enumerate}
-        \item $d(x_{0}, x_{1}) \geq 0$ where $x_{0}, x_{1} \in X$
-        \item $d(x_{0}, x_{1}) \iff x_{0} = x_{1}$
-        \item $d(x_{0}, x_{1}) = d(x_{1}, x_{0})$ (irrespective of order)
-        \item $d(x, z) \leq d(x, y) + d(y, z)$ (triangular inequity)
-    \end{enumerate}
+        \begin{enumerate}
+            \item $d(x_{0}, x_{1}) \geq 0$ where $x_{0}, x_{1} \in X$
+            \item $d(x_{0}, x_{1}) \iff x_{0} = x_{1}$
+            \item $d(x_{0}, x_{1}) = d(x_{1}, x_{0})$ (irrespective of order)
+            \item $d(x, z) \leq d(x, y) + d(y, z)$ (triangular inequity)
+        \end{enumerate}
 
-    Euclidean metric on $\mathbf{R^{2}}$:
+        Euclidean metric on $\mathbf{R^{2}}$:
         $d(x, y) = \sqrt{(x_{1} - y_{1})^{2} + (x_{2} - y_{2})^{2}}$
 
-    Discrete metric: $d(x, y) = \left\{\begin{matrix}
+        Discrete metric: $d(x, y) = \left\{\begin{matrix}
         1 &\mbox{if}\ x \neq y \\
         0 &\mbox{if}\ x = y 
         \end{matrix}\right.$
 
-    Open ball of radius $\epsilon$:
+        Open ball of radius $\epsilon$:
         $B_{\epsilon}(x_{0}) = B(x_{0}, \epsilon) = \{ y \in M \mid d(x_{0}, y) < \epsilon \}$
 
-    \subsection{Open Sets in $X$}
-    
+    \subsection{Open Sets}
+
+        \subsubsection{Metric Spaces $X$}
+
+        $U \subset X$ is open if for any $x \in U$ there exists $\epsilon > 0$ such that $B(x, \epsilon) \subset U$
+
+        Open interval is open set; closed interval is not open set.
+
+        \subsubsection{Topological Spaces}
+
+        Let $U$ be a family of all sets, $X$ be a set. $U$ is a \textbf{topology} on $X$ if
+
+        \begin{enumerate}
+            \item $\emptyset$ (Empty set) is always open; $X$ is open.
+            \item ...
+            \item ...
+        \end{enumerate}
+
+        Finite case: 
+
+        Infinite case: There is no minimum. $( -\frac{1}{n}, \frac{1}{n})$ then $n \to 0$, hence not open set.
+
+    \section{Compact Sets}
+
 \end{document}
