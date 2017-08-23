@@ -16,22 +16,20 @@
 
         Metric (distance function) of $x_{0}$ and $x$: $d(x_{0}, x) = \lvert x - x_{0} \rvert$
 
-    \subsection{Metric Space}
-
-        Metric space $X$
+    \subsection{Metric Space $M$}
 
         \begin{equation}
         d \colon M \times M \to \mathbb{R}
         \end{equation}
 
         \begin{enumerate}
-            \item $d(x_{0}, x_{1}) \geq 0$ where $x_{0}, x_{1} \in X$
-            \item $d(x_{0}, x_{1}) \iff x_{0} = x_{1}$
+            \item $d(x_{0}, x_{1}) \geq 0$ where $x_{0}, x_{1} \in M$
+            \item $d(x_{0}, x_{1}) = 0 \iff x_{0} = x_{1}$
             \item $d(x_{0}, x_{1}) = d(x_{1}, x_{0})$ (irrespective of order)
             \item $d(x, z) \leq d(x, y) + d(y, z)$ (triangular inequity)
         \end{enumerate}
 
-        Euclidean metric on $\mathbb{R^{2}}$:
+        Euclidean metric on $\mathbb{R}^{2}$:
         $d(x, y) = \sqrt{(x_{1} - y_{1})^{2} + (x_{2} - y_{2})^{2}}$
 
         Discrete metric: $d(x, y) = \left\{\begin{matrix}
@@ -46,18 +44,18 @@
 
         \subsubsection{Metric Spaces $X$}
 
-        $U \subset X$ is open if for any $x \in U$ there exists $\epsilon > 0$ such that $B(x, \epsilon) \subset U$
+        $U \subset X$ is open if for any $x \in U$ there exists $\epsilon > 0$ such that $B(x, \epsilon) \subset U$.
 
         Open interval is open set; closed interval is not open set.
 
-        \subsubsection{Topological Spaces}
+        \subsubsection{Topological Spaces $(X, U)$}
 
         Let $U$ be a family of all sets, $X$ be a set. $U$ is a \textbf{topology} on $X$ if
 
         \begin{enumerate}
-            \item $\emptyset$ (Empty set) is always open; $X$ is open.
-            \item $F$ is a collection of open sets, then $\bigcup_{U \in F} U$ is open. (Union)
-            \item $F$ is a \textit{finite} collection of open sets, then $\bigcap_{U \in F} U$ is open. (Intersection)
+            \item $\emptyset$ (Empty set) is always open; $X$ is open. $\Leftrightarrow$ $\emptyset$ and $X$ itself belong to $U$.
+            \item $F$ is a collection of open sets, then $\bigcup_{U \in F} U$ is open. $\Leftrightarrow$ Any union of members of $U$ still belongs to $U$. (Union)
+            \item $F$ is a \textit{finite} collection of open sets, then $\bigcap_{U \in F} U$ is open. $\Leftrightarrow$ The intersection of any finite number of members of $U$ belongs to $U$. (Intersection)
         \end{enumerate}
 
         Finite case: $x \in \bigcap_{U \in F} U$, $x \in U$, hence $B(x, \epsilon_{U}) \subset U$
@@ -68,11 +66,9 @@
             \therefore B(x, \delta) \subset \bigcap_{U \in F} U
         \end{gather*}
 
-        Infinite case: There is no minimum. $( -\frac{1}{n}, \frac{1}{n})$ then $n \to 0$, hence not open set.
+        Infinite case: For example, the intersection of all intervals of $( -\frac{1}{n}, \frac{1}{n})$, where $n$ is a positive number, is the set $\{ 0 \}$ which is not open in the real line.
 
-        Topological space: $(X, U)$
-
-    \section{Compact Sets}
+    \subsection{Compact Sets}
 
         In metric space $X$, compact sets are \underline{closed}.
 
