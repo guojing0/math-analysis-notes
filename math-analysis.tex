@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 \title{Notes for MATH 3210: Foundation of Analysis I}
 \author{Jing Guo}
@@ -20,7 +21,7 @@
         Metric space $X$
 
         \begin{equation}
-        d \colon M \times M \to \mathbf{R}
+        d \colon M \times M \to \mathbb{R}
         \end{equation}
 
         \begin{enumerate}
@@ -30,7 +31,7 @@
             \item $d(x, z) \leq d(x, y) + d(y, z)$ (triangular inequity)
         \end{enumerate}
 
-        Euclidean metric on $\mathbf{R^{2}}$:
+        Euclidean metric on $\mathbb{R^{2}}$:
         $d(x, y) = \sqrt{(x_{1} - y_{1})^{2} + (x_{2} - y_{2})^{2}}$
 
         Discrete metric: $d(x, y) = \left\{\begin{matrix}
@@ -55,14 +56,26 @@
 
         \begin{enumerate}
             \item $\emptyset$ (Empty set) is always open; $X$ is open.
-            \item ...
-            \item ...
+            \item $F$ is a collection of open sets, then $\bigcup_{U \in F} U$ is open. (Union)
+            \item $F$ is a \textit{finite} collection of open sets, then $\bigcap_{U \in F} U$ is open. (Intersection)
         \end{enumerate}
 
-        Finite case: 
+        Finite case: $x \in \bigcap_{U \in F} U$, $x \in U$, hence $B(x, \epsilon_{U}) \subset U$
+
+        \begin{gather*}
+            \delta = \min \epsilon_{U} > 0 \quad where \quad U \in F \\
+            B(x, \delta) \subset B(x, \epsilon_{U}) \subset U \\
+            \therefore B(x, \delta) \subset \bigcap_{U \in F} U
+        \end{gather*}
 
         Infinite case: There is no minimum. $( -\frac{1}{n}, \frac{1}{n})$ then $n \to 0$, hence not open set.
 
+        Topological space: $(X, U)$
+
     \section{Compact Sets}
+
+        In metric space $X$, compact sets are \underline{closed}.
+
+        Compact $\Leftrightarrow$ closed and bounded (only for Euclidean metric, $\mathbb{R}^{n}$)
 
 \end{document}
