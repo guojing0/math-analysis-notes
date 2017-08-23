@@ -1,0 +1,48 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{Notes for MATH 3210: Foundation of Analysis I}
+\author{Jing Guo}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	
+	\section{Basic Topology}
+	
+	Metric (distance function) of $x_{0}$ and $x$: $d(x_{0}, x) = \lvert x - x_{0} \rvert$
+	
+	\subsection{Metric Space}
+	
+	Metric space $X$
+	
+	\begin{equation}
+	d \colon M \times M \to \mathbf{R}
+	\end{equation}
+	
+	\begin{enumerate}
+		\item $d(x_{0}, x_{1}) \geq 0$ where $x_{0}, x_{1} \in X$
+		\item $d(x_{0}, x_{1}) \iff x_{0} = x_{1}$
+		\item $d(x_{0}, x_{1}) = d(x_{1}, x_{0})$ (irrespective of order)
+		\item $d(x, z) \leq d(x, y) + d(y, z)$ (triangular inequity)
+	\end{enumerate}
+
+    Euclidean metric on $\mathbf{R^{2}}$:
+        $d(x, y) = \sqrt{(x_{1} - y_{1})^{2} + (x_{2} - y_{2})^{2}}$
+        
+    Discrete metric: $d(x, y) = \left\{\begin{matrix}
+    	1 &\mbox{if}\ x \neq y \\
+    	0 &\mbox{if}\ x = y 
+    	\end{matrix}\right.$
+    	
+    Open ball of radius $\epsilon$:
+        $B_{\epsilon}(x_{0}) = B(x_{0}, \epsilon) = \{ y \in M \mid d(x_{0}, y) < \epsilon \}$
+        
+    \subsection{Open Sets in $X$}
+    
+    
+	
+\end{document}
