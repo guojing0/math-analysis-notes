@@ -20,10 +20,10 @@
     
     For any $a, b \in A$,
     
-    \begin{align}
-        A \ast A \to A \\
-        a, b \to a + b
-    \end{align}
+    \begin{align*}
+        A \ast A &\to A \\
+        a, b &\to a + b
+    \end{align*}
     
     Notations:
     
@@ -73,6 +73,49 @@
         0 & 0
     \end{bmatrix}
     \end{displaymath}
+    
+    $A$ has no zero divisors if $x \neq 0, y \neq 0 \rightarrow x \cdot y \neq 0$ 
+    
+    \subsubsection{Construction of Fractions}
+    
+    We need to show that $K$ is a field (with addition and multiplication). Assume $A$ is a commutative ring with no zero divisors, and $A^{\ast} = A - \{ 0 \}$.
+    
+    $A \times A^{\ast} = \{ (a, b) \mid a, b \in A, b \neq 0 \}$
+    
+    Set of equivalence classes: $K = (A \times A^{\ast}) / \sim$ (elements of $K$ are fractions)
+    
+    We first need to define addition:
+    
+    \begin{align*}
+        (a, b) &\sim (a', b') \\
+        \frac{a}{b} &= \frac{a'}{b'} \\
+        ab' &= a'b
+    \end{align*}
+    
+    $[(a, b)]$: The equivalence class of $(a, b)$
+    
+    \begin{align*}
+        [(a, b)] + [(a', b')] &= [(ab' + a'b, bb')]
+        \text{(independent of choice of equivalence class)} \\
+        [(a_{1}, b_{1})] + [(a', b')] &= [(a_{1}b' + a'b_{1}, b_{1}b')] \\
+        \therefore (ab' + a'b) \cdot b_{1}b' &= (a_{1}b' + a'b_{1}) \cdot bb' \\
+        \therefore left &= right
+    \end{align*}
+    
+    We then need to define multiplication:
+    
+    \begin{align*}
+        [(a, b)] [(a', b')] &= [(aa', bb')] \\
+        [(0, 1)] &= 0 \in K \text{(additive identity)} \\
+        [(1, 1)] &= 1 \in K \text{(multiplicative identity)}
+    \end{align*}
+    
+    Examples:
+    
+    \begin{align*}
+        [(x, y)] + [(0, 1)] = [(x, y)] \\
+        [(x, y)] \cdot [(1, 1)] = [(x, y)]
+    \end{align*}
 
     \section{Basic Topology}
 
