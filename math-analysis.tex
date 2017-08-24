@@ -11,6 +11,68 @@
 
     \maketitle
     \tableofcontents
+    
+    \section{Ring and Field}
+    
+    \subsection{Ring}
+    
+    The set $A$ has two binary operations, addition and multiplication.
+    
+    For any $a, b \in A$,
+    
+    \begin{align}
+        A \ast A \to A \\
+        a, b \to a + b
+    \end{align}
+    
+    Notations:
+    
+    \begin{itemize}
+        \item $\mathbb{Z}$: The set of integers (ring, not field, has no inverse);
+        \item $\mathbb{Q}$: The set of rational numbers;
+        \item $\mathbb{R}$: The set of real numbers (ring and field).
+    \end{itemize}
+    
+    \subsubsection{Addition Axiom}
+
+    \begin{enumerate}
+        \item $a + b = b + a$ (commutative)
+        \item $(a + b) + c = a + (b + c)$ (associative)
+        \item There is an element $0$ such that $a + 0 = a$ (additive identity)
+        \item There exists $-a$ (additive inverse) such that $a + (-a) = 0$
+    \end{enumerate}
+
+    \subsubsection{Multiplication Axiom}
+    
+    \begin{enumerate}
+        \item $a \cdot b = b \cdot a$
+        \item $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
+        \item There is an element $1$ such that $a \cdot 1 = a$ and $0 \neq 1$
+        \item $a \cdot (b + c) = a \cdot b + a \cdot c$ (distributive)
+    \end{enumerate}
+
+    \subsection{Field}
+    
+    $A$ is a field if $A$ is a \textit{ring} for any $a \in A$ and $a \neq 0$, there exists $a^{-1}$ (inverse of $a$) such that $a \cdot a^{-1} = 1$
+    
+    Example: $x, y \in A$, $x \neq 0$, $y \neq 0$, $xy = 0$
+    
+    \begin{displaymath}
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 0
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
+        0 & 0 \\
+        0 & 1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & 0 \\
+        0 & 0
+    \end{bmatrix}
+    \end{displaymath}
 
     \section{Basic Topology}
 
@@ -18,9 +80,9 @@
 
     \subsection{Metric Space $M$}
 
-        \begin{equation}
+        \begin{displaymath}
         d \colon M \times M \to \mathbb{R}
-        \end{equation}
+        \end{displaymath}
 
         \begin{enumerate}
             \item $d(x_{0}, x_{1}) \geq 0$ where $x_{0}, x_{1} \in M$
