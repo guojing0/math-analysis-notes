@@ -129,14 +129,23 @@
     
     \textbf{Therefore} $K$ is a field of fractions of $A$.
     
-    Map:
+    We need to show the following map is injective:
+    
+    If $A = \mathbb{Z}$ and $K = \mathbb{Q}$:
     
     \begin{align*}
-        \mathbb{A} &\longrightarrow \mathbb{K} \quad \text{{(injective)}} \\
+        A &\longrightarrow K \quad \text{{(injective)}} \\
         x &\longrightarrow [(x, 1)] \\
         x + y &\longrightarrow [(x + y, 1)] = [(x, 1)] + [(y, 1)] \\
         x \cdot y &\longrightarrow [(xy, 1)] = [(x, 1)] \cdot [(y, 1)] \\
         \text{Comm. ring without } 0 &\longrightarrow \text{Field containing the ring}
+    \end{align*}
+
+    Assume $[(a, 1) = [(b, 1)]]$ where $a, b \in A$:
+    
+    \begin{align*}
+        &a \cdot 1 = b \cdot 1 \Rightarrow a = b \\
+        &\therefore \text{The map is injective.}
     \end{align*}
 
     \section{Basic Topology}
