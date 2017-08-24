@@ -55,7 +55,7 @@
     
     $A$ is a field if $A$ is a \textit{ring} for any $a \in A$ and $a \neq 0$, there exists $a^{-1}$ (inverse of $a$) such that $a \cdot a^{-1} = 1$
     
-    Example: $x, y \in A$, $x \neq 0$, $y \neq 0$, $xy = 0$
+    \textbf{Example}: $x, y \in A$, $x \neq 0$, $y \neq 0$, $xy = 0$
     
     \begin{displaymath}
     \begin{bmatrix}
@@ -110,11 +110,33 @@
         [(1, 1)] &= 1 \in K \text{(multiplicative identity)}
     \end{align*}
     
-    Examples:
+    \textbf{Examples}:
     
     \begin{align*}
         [(x, y)] + [(0, 1)] = [(x, y)] \\
-        [(x, y)] \cdot [(1, 1)] = [(x, y)]
+        [(x, y)] \cdot [(1, 1)] = [(x, y)] \\
+        [(x, y)] \neq [(0, 1)]
+    \end{align*}
+    
+    So we need to show that $K$ is a field:
+    
+    \begin{align*}
+        [(x, y)] \cdot [(y, x)] &= [(xy, xy)] = [(1, 1)] \quad \text{(Non-zeros have inverse)} \\
+        \because &ab' = a'b \\
+                       &(a, b) \sim (a', b') \\
+        \therefore &[(xy, xy)] = [(1, 1)]
+    \end{align*}
+    
+    \textbf{Therefore} $K$ is a field of fractions of $A$.
+    
+    Map:
+    
+    \begin{align*}
+        \mathbb{A} &\longrightarrow \mathbb{K} \quad \text{{(injective)}} \\
+        x &\longrightarrow [(x, 1)] \\
+        x + y &\longrightarrow [(x + y, 1)] = [(x, 1)] + [(y, 1)] \\
+        x \cdot y &\longrightarrow [(xy, 1)] = [(x, 1)] \cdot [(y, 1)] \\
+        \text{Comm. ring without } 0 &\longrightarrow \text{Field containing the ring}
     \end{align*}
 
     \section{Basic Topology}
