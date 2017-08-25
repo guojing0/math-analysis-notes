@@ -95,8 +95,13 @@
     $[(a, b)]$: The equivalence class of $(a, b)$
     
     \begin{align*}
-        [(a, b)] + [(a', b')] &= [(ab' + a'b, bb')] \quad
-        \text{(independent of choice of equivalence class)} \\
+        [(a, b)] + [(a', b')] &= [(ab' + a'b, bb')] = \frac{ab' + a'b}{bb'} \\
+        [(0, 1)] &= 0 \in K \text{(additive)} \\
+    \end{align*}
+    
+    The following is to prove that it is independent of the choice of equivalence class:
+    
+    \begin{align*}
         [(a_{1}, b_{1})] + [(a', b')] &= [(a_{1}b' + a'b_{1}, b_{1}b')] \\
         \therefore (ab' + a'b) \cdot b_{1}b' &= (a_{1}b' + a'b_{1}) \cdot bb' \\
         \therefore left &= right
@@ -105,8 +110,7 @@
     We then need to define multiplication:
     
     \begin{align*}
-        [(a, b)] [(a', b')] &= [(aa', bb')] \\
-        [(0, 1)] &= 0 \in K \text{(additive identity)} \\
+        [(a, b)] [(a', b')] &= [(aa', bb')] = \frac{aa'}{bb'} \\
         [(1, 1)] &= 1 \in K \text{(multiplicative identity)}
     \end{align*}
     
