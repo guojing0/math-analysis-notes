@@ -17,6 +17,7 @@
     Notations:
     
     \begin{itemize}
+        \item $\mathbb{N}$: The set of natural numbers;
         \item $\mathbb{Z}$: The set of integers (ring, not field, has no inverse);
         \item $\mathbb{Q}$: The set of rational numbers;
         \item $\mathbb{R}$: The set of real numbers (ring and field).
@@ -74,7 +75,80 @@
     \end{bmatrix}
     \end{displaymath}
     
-    $A$ has no zero divisors if $x \neq 0, y \neq 0 \rightarrow x \cdot y \neq 0$ 
+    $A$ has no zero divisors if $x \neq 0, y \neq 0 \rightarrow x \cdot y \neq 0$
+    
+    \subsection{Construction of Integers}
+    
+    We need to construct $\mathbb{Z}$ from $\mathbb{N}$ with \textbf{localization}.
+    
+    \begin{displaymath}
+        \mathbb{N} = \{ 0, 1, 2, 3, \ldots \}
+    \end{displaymath}
+    
+    Set of equivalence class: $\mathbb{N} \times \mathbb{N} / \sim$
+    
+    Equivalence relation: $(a, b) \sim (a', b')$ if $a + b' = b + a'$, since $a - b = a' - b'$
+    
+    \begin{gather*}
+        (a, b) \sim (a', b') \sim (a'', b'') \\
+        a' + b'' = b' + a'' \\
+        \boldsymbol{(a + b'') + b'} = (a + b') + b''
+        = b + a' + b'' = b + b' + a'' = \boldsymbol{(a'' + b) + b'} \\
+        \therefore a + b'' = a'' + b \\
+        \therefore (a, b) \sim (a'', b'')
+    \end{gather*}
+    
+    We then should define addition:
+    
+    \begin{equation} \label{eq:add1}
+        [(a, b)] + [(a', b')] = [(a + a', b + b')]
+    \end{equation}
+    
+    \begin{equation} \label{eq:add2}
+        [(a_{1}, b_{1})] + [(a', b')] = [(a_{1} + a', b_{1} + b')]
+    \end{equation}
+    
+    Equation \ref{eq:add1} and equation \ref{eq:add2} are equal since independent of choice of equivalence classes:
+    
+    \begin{gather*}
+        a + a' + b_{1} + b' = a_{1} + a' + b + b' \\
+        a + b_{1} = a_{1} + b
+    \end{gather*}
+    
+    Additive identity: $0 = [(0, 0)]$
+    
+    For example: $[(a, b)] + [(b, a)] = [(a + b, a + b)] = [(0, 0)] = 0$
+    
+    We then need to define multiplication:
+    
+    \begin{displaymath}
+        [(a, b)] \cdot [(a', b')] = [(aa' + bb', ab' + a'b)]
+    \end{displaymath}
+    
+    \begin{align*}
+        &(a - b)(a' - b') \\
+     = \quad &aa' - ab' - a'b + bb' \\
+     = \quad &(aa' + bb') - (ab' + a'b)
+    \end{align*}
+    
+    Multiplicative identity: $1 = [(1, 0)]$
+    
+    For example: $[(a, b)] \cdot [(1, 0)] = [(a, b)]$
+    
+    $\therefore \mathbb{N} \times \mathbb{N} / \sim$ is a ring, that is, $\mathbb{Z}$.
+    
+    \begin{align*}
+        \mathbb{N} &\longrightarrow \mathbb{Z} \\
+        m &\longrightarrow [(m, 0)] \\
+        -m &\longrightarrow [(0, m)] = -[(m, 0)]
+    \end{align*}
+    
+    For example:
+    
+    \begin{align*}
+        [(a, b)] &= [(a, 0)] + [(0, b)] \\
+                   &= [(a, 0)] - [(b, 0)]
+    \end{align*}
     
     \subsection{Construction of Fractions (Rational Numbers)}
     
@@ -96,7 +170,7 @@
     
     \begin{align*}
         [(a, b)] + [(a', b')] &= [(ab' + a'b, bb')] = \frac{ab' + a'b}{bb'} \\
-        [(0, 1)] &= 0 \in K \text{(additive)} \\
+        [(0, 1)] &= 0 \in K \quad \text{(additive identity)} \\
     \end{align*}
     
     The following is to prove that it is independent of the choice of equivalence class:
@@ -111,7 +185,7 @@
     
     \begin{align*}
         [(a, b)] [(a', b')] &= [(aa', bb')] = \frac{aa'}{bb'} \\
-        [(1, 1)] &= 1 \in K \text{(multiplicative identity)}
+        [(1, 1)] &= 1 \in K \quad \text{(multiplicative identity)}
     \end{align*}
     
     \textbf{Examples}:
@@ -151,6 +225,10 @@
         &a \cdot 1 = b \cdot 1 \Rightarrow a = b \\
         &\therefore \text{The map is injective.}
     \end{align*}
+    
+    $P(x) = a_{0}x^{n} + a_{1}x^{n - 1} + a_{2}x^{n - 2} + \cdots + a_{n}, a \in R$
+    
+    Ring of polynomials: $P(x) \times Q(x) \Rightarrow R(x)$ (with no zero divisors)
 
     \section{Basic Topology}
 
