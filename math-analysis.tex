@@ -229,6 +229,56 @@
     $P(x) = a_{0}x^{n} + a_{1}x^{n - 1} + a_{2}x^{n - 2} + \cdots + a_{n}, a \in R$
     
     Ring of polynomials: $P(x) \times Q(x) \Rightarrow R(x)$ (with no zero divisors)
+    
+    \subsection{Ordered Set}
+    
+    \subsubsection{Partial Order}
+    
+    $(S, \leq)$ is a (partially) ordered set (poset), $\forall x, y, z \in S$:
+    
+    \begin{enumerate}
+        \item $x \leq$ x
+        \item $x \leq y, y \leq x \Rightarrow x = y$
+        \item $x \leq y, y \leq z \Rightarrow x \leq z$
+    \end{enumerate}
+
+    \subsubsection{Total Order}
+
+    Total/Linear order: Either $x \leq y$ or $y \leq x$.
+    
+    Ordered field is a field $K$ with $\leq$ total order.
+    
+    \textbf{Definition}:
+    
+    \begin{enumerate}
+        \item If $x \leq y$ then $x + z \leq y + z$ and
+        \item if $x \geq 0, y \geq 0$ then $x \times y \geq 0$
+    \end{enumerate}
+
+    \textbf{First example}:
+    
+    \begin{gather*}
+        \mathbb{Q} = \{ (a, b) \}, (a, b) = \frac{a}{b} \\
+        \text{Since} \quad a \geq 0, b > 0
+    \end{gather*}
+    
+    $\therefore \mathbb{Q}$ is an ordered set.
+    
+    \textbf{Second example}:
+    
+    \begin{align*}
+        x \geq 0 &\Leftrightarrow -x \leq 0 \\
+        x \geq 0 &\Rightarrow x^{2} \geq 0 \\
+        x \leq 0 &\Rightarrow (-x)^{2} = x^{2} \geq 0
+    \end{align*}
+    
+    \begin{align*}
+        1^{2} = 1 > 0 \\
+        2 > 1 \\
+        3 > 2 \\
+        \vdots \\
+        n > n - 1
+    \end{align*}
 
     \section{Basic Topology}
 
