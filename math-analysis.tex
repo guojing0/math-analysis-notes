@@ -1,7 +1,7 @@
 \documentclass{article}
 
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{graphicx}
 
 \title{Notes for MATH 3210: Foundation of Analysis I}
 \author{Jing Guo}
@@ -56,6 +56,8 @@
     
     $A$ is a field if $A$ is a \textit{ring} for any $a \in A$ and $a \neq 0$, there exists $a^{-1}$ (inverse of $a$) such that $a \cdot a^{-1} = 1$.
     
+    $A$ has no zero divisors if $x \neq 0, y \neq 0 \rightarrow x \cdot y \neq 0$
+    
     \textbf{Example}: $x, y \in A$, $x \neq 0$, $y \neq 0$, $xy = 0$
     
     \begin{displaymath}
@@ -74,8 +76,6 @@
         0 & 0
     \end{bmatrix}
     \end{displaymath}
-    
-    $A$ has no zero divisors if $x \neq 0, y \neq 0 \rightarrow x \cdot y \neq 0$
     
     \subsection{Construction of Integers}
     
@@ -279,6 +279,37 @@
         \vdots \\
         n > n - 1
     \end{align*}
+    
+    \subsubsection{Least-upper-bound Property}
+    
+    $\mathbb{Q}$: Ordered field of rational numbers (with gaps)
+    
+    Least-upper-bound property: $K$ has least-upper-bound property if any bounded subset $E \subset K$ has least upper bound.
+    
+    $K$ is a field with order relation $\leq$, $E \subset K$ and $E$ is \textit{bounded above} if $\exists \alpha \in K$ such that $p \leq \alpha, p \in E$.
+    
+    \includegraphics{supremum}
+    
+    $\beta$ is the \textit{least-upper-bound} of $E$ if
+    
+    \begin{enumerate}
+        \item $\beta$ is an upper bound,
+        \item for any other upper bound $\alpha$, we have $\beta \leq \alpha$.
+    \end{enumerate}
+
+    We call $\beta = \sup E$.
+    
+    We then need to prove that $\mathbb{Q}$ does not have least-upper-bound property, that is, there are gaps in $\mathbb{Q}$.
+    
+    \begin{proof}
+            \begin{align*}
+                E = \{ q \in \mathbb{Q} : q^{2} \leq 2 \} \quad &\Rightarrow \quad  \text{no } \sup E \\
+                q \in E \Leftrightarrow - q \in E \quad &\text{and} \quad q \geq 0 \\
+            \end{align*}
+            
+            Let $p \in \mathbb{Q}$ such that $p \geq 0, p^{2} > 2$.
+            $\therefore p^{2} > 2 \geq q^{2} \Rightarrow p^{2} \geq q^{2}$
+    \end{proof}
 
     \section{Basic Topology}
 
