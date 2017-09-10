@@ -7,6 +7,8 @@
 \author{Jing Guo}
 \date{\today}
 
+\newtheorem*{theorem}{Theorem}
+
 \begin{document}
 
     \maketitle
@@ -255,6 +257,8 @@
         \item if $x \geq 0, y \geq 0$ then $x \times y \geq 0$
     \end{enumerate}
 
+    There is no total order in complex numbers.
+
     \textbf{First example}:
     
     \begin{gather*}
@@ -302,14 +306,134 @@
     We then need to prove that $\mathbb{Q}$ does not have least-upper-bound property, that is, there are gaps in $\mathbb{Q}$.
     
     \begin{proof}
-            \begin{align*}
-                E = \{ q \in \mathbb{Q} : q^{2} \leq 2 \} \quad &\Rightarrow \quad  \text{no } \sup E \\
-                q \in E \Leftrightarrow - q \in E \quad &\text{and} \quad q \geq 0 \\
-            \end{align*}
+        \begin{align*}
+            E = \{ q \in \mathbb{Q} : q^{2} \leq 2 \} \quad &\Rightarrow \quad  \text{no } \sup E \\
+            q \in E \Leftrightarrow - q \in E \quad &\text{and} \quad q \geq 0 \\
+        \end{align*}
             
-            Let $p \in \mathbb{Q}$ such that $p \geq 0, p^{2} > 2$.
-            $\therefore p^{2} > 2 \geq q^{2} \Rightarrow p^{2} \geq q^{2}$
+        Let $p \in \mathbb{Q}$ such that $p \geq 0, p^{2} > 2$.
+            
+        \begin{align*}
+            \therefore &p^{2} > 2 \geq q^{2} \Rightarrow p^{2} \geq q^{2} \\
+                            &p^{2} - q^{2} = (p + q)(p - q) \geq 0 \quad \text{(property of ordered field)} \\
+            \because  &p \geq 0, q > 0 \\
+            \therefore &p + q \geq 0 + q = q \geq 0 \\
+            \therefore &p \geq q \\
+                            &p \in \mathbb{Q}, p \geq 0, p^{2} > 2 \text{ are upper bound of } E.
+        \end{align*}
+
+        Remark: Let $p$ be upper bound of $E$, $\forall q \in E, q \leq p, p > 0$.
+        
+        Define $p'$:
+        
+        \begin{displaymath}
+            p' = p - \frac{p^{2} - 2}{p + 2} = \frac{2p + 2}{p + 2} = 2\frac{p + 1}{p + 2}
+        \end{displaymath}
+        
+        \begin{displaymath}
+            \therefore p'^{2} - 2 = 2\frac{p^{2} - 2}{(p + 2)^{2}}
+        \end{displaymath}
+        
+        In the above equation, $p^{2} - 2 \leq 0$ and $(p + 2)^{2} \geq 0$.
+        
+        Assume $p \in E \Rightarrow p^{2} \leq 2 \Rightarrow p^{2} - 2 \leq 0$.
+        
+        $\therefore p'^{2} - 2 \leq 0 \Rightarrow p' \in E \text{ and } p' \geq p$.
+        
+        $\therefore \text{Either } p' = p \text{ or } p' > p$.
+        
+        But neither of them is possible since $\sqrt{2}$ is irrational:
+        
+        \begin{align*}
+            &p = p' \Rightarrow p^{2} = 0, p \in \mathbb{Q} \text{ but } p \text{ is irrational.} \\
+            &\therefore p \notin E. \text{ All upper bounds of } E \text{ are } \{ p \in \mathbb{Q}, p^{2} > 2 \}
+        \end{align*}
+        
+        $r$: an upper bound, and $r^{2} \geq 2$
+        
+        \begin{alignat*}{2}
+            r' &= r - \frac{r^{2} - 2}{r^{2} + 2} \quad &&\therefore r' < r \\
+            r'^{2} - 2 &= 2\frac{r^{2}}{(r + 2)^{2}} > 0 \quad &&\therefore r'^{2} > 2
+        \end{alignat*}
+        
+        $\therefore r'$ is an upper bound of $E$.
+        
+        So we have no upper bound property in $E$.
     \end{proof}
+
+    \subsection{Construction of Real Numbers}
+
+    \begin{theorem}
+        There exists a total ordered field $\mathbb{R}$ which has least upper bound property. So every subset $E \subset \mathbb{R}$, are bounded above, has a supremum.
+        
+        Such field is \textbf{unique}.
+    \end{theorem}
+
+    \begin{align*}
+        K &\xrightarrow{\varphi} K' \\
+        \varphi(x + y) &= \varphi(x) + \varphi(y) \\
+        \varphi(x \cdot y) &= \varphi(x) \cdot \varphi(y) \\
+        \text{if bijective, then isomorphism;} &\text{ otherwise, morphism.}
+    \end{align*}
+    
+    History of construction of real numbers: Dedekind used cuts and Cantor used Cauchy sequence, which works for more general occasions, in 1872.
+    
+    What is \textit{cuts}?
+    
+    \begin{align*}
+        &E \subset \mathbb{Q}, E \neq \mathbb{Q} \rightarrow E \text{ is bounded above} \\
+        &q \in \mathbb{Q}, E_{q} = \{ p \in \mathbb{Q} : p < q \} \\
+        &\text{If } \alpha \in E, \beta < \alpha \Rightarrow \beta \in \alpha \\
+        &\gamma \in E, \delta \in E, \delta > \gamma
+    \end{align*}
+    
+    \subsubsection{Archimedean Property}
+    
+    \begin{theorem}[Archimedean Property]
+        \begin{align*}
+            x, y \in \mathbb{R}&, x > 0, y > 0 \\
+            \exists n \in \mathbb{Z}_{+}&, n \cdot x > y
+        \end{align*}
+    \end{theorem}
+
+    \begin{proof}
+        Assume $\{ nx \mid n \in \mathbb{Z} \}$ is bounded above, i.e. has least upper bound property.
+        
+        \begin{align*}
+            &\exists \alpha = \sup \{ nx \mid n \in \mathbb{Z} \} \\
+            &n \cdot x \leq \alpha, \forall n \text{ and } \alpha - x < \alpha \\
+            \because \quad &\alpha = \sup \{ nx \mid n \in \mathbb{Z} \} \\
+            \therefore \quad &\alpha - x \text{ is NOT an upper bound.} \\
+            &\exists m \text{ such that } \alpha - x < n \cdot x \\
+            \therefore \quad & \alpha < (n + 1) x \\
+            \therefore \quad & \text{Contridication.} \\
+            \therefore \quad &\{ nx \mid n \in \mathbb{R} \} \text{ is not bounded above.} \\
+        \end{align*}
+    \end{proof}
+
+    \subsubsection{Density of Real Numbers}
+    
+    \begin{proof}
+        Assume $x, y \in \mathbb{R}$ and $x < y$.
+        
+        There exists $q \in \mathbb{Q}$ such that $x < q < y$. Because $y - x > 0$ and $1 > 0$, so there exists $n$ such that $n(y - x) > 1$.
+        
+        \begin{align*}
+            nx < m_{1}, \quad & m_{1} \in \mathbb{Z} \\
+            -nx < m_{2}, \quad & m_{2} \in \mathbb{Z} \\
+            \therefore -m_{2} < &nx < m_{1}
+        \end{align*}
+        
+        Conclusion: $\exists m \in \mathbb{Z}, m - 1 \leq nx < m$, so $nx < m \leq nx + 1 < ny$.
+        
+        \begin{align*}
+            nx < m < ny \\
+            m \leq mx + 1 \\
+            \therefore x < \frac{m}{n} < y
+        \end{align*}
+    \end{proof}
+
+    \subsection{Construction of Complex Numbers}
 
     \section{Basic Topology}
 
