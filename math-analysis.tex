@@ -8,8 +8,10 @@
 \date{\today}
 
 \newtheorem*{theorem}{Theorem}
+\newtheorem*{remark}{Remark}
 
 \newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\inpro}[2]{(#1 \mid #2)}
 \newcommand{\norm}[1]{\| #1 \|}
 
 \begin{document}
@@ -625,6 +627,34 @@
     \end{enumerate}
     
     Euclidean inner product: In $\mathbb{R}^{n}, x = \{ x_{1}, x_{2}, \cdots, x_{n} \}, y = \{ y_{1}, y_{2}, \cdots, y_{n} \}$, $(x \mid y) = \sum_{i = 1}^{n} x_{i}y_{i}$
+    
+    \subsection{Cauchy-Schwarz Inequality}
+    
+    \begin{theorem}[Cauchy-Schwarz Inequality]
+        \begin{displaymath}
+            \forall u, v \in V, \abs{\inpro{u}{v}} \leq \norm{u} \cdot \norm{v}
+        \end{displaymath}
+    \end{theorem}
+    
+    \begin{proof}
+        We can assume that $u, v \neq 0$ and $\forall t \in \mathbb{R}$, $\inpro{tu - v}{tv - u} \geq 0$
+        
+        \begin{align*}
+            &t^{2}\inpro{u}{u} - t\inpro{u}{v} - t\inpro{v}{u} + \inpro{v}{v} \geq 0 \\
+            \because &b^{2} - 4ac \leq 0 \\
+            &4\inpro{u}{v}^{2} \leq 4\norm{u}^{2}\norm{v}^{2} \\
+            &\abs{\inpro{u}{v}} \leq \norm{u}\norm{v} \\
+        \end{align*}
+    \end{proof}
+
+    Properties of norms:
+    
+    \begin{enumerate}
+        \item $\norm{v} \geq 0$
+        \item $\norm{v} = 0 \iff v = 0$
+        \item $\norm{\alpha v} = \abs{a} \norm{v}, \alpha \in \mathbb{R}$
+        \item $\norm{u + v} \leq \norm{u} + \norm{v}$
+    \end{enumerate}
     
     \section{Basic Topology}
 
