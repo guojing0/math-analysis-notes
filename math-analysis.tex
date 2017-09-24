@@ -9,6 +9,9 @@
 
 \newtheorem*{theorem}{Theorem}
 
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\| #1 \|}
+
 \begin{document}
 
     \maketitle
@@ -535,6 +538,26 @@
     
     \subsection{Complex Number}
     
+    Properties:
+    
+    \begin{enumerate}
+        \item $\left| z \right| \geq 0$
+        \item $\left| z \right| = 0 \iff z = 0$
+        \item $\left| z \right| = \left| -z \right|$
+        \item Triangular inequity: $\left| z_{1} + z_{2} \right| \leq \left| z_{1} \right| + \left| z{2} \right|$
+    \end{enumerate}
+    
+    \begin{proof}[Proof of Triangular Inequity]
+        \begin{align*}
+            \abs{z_{1} + z_{2}}^{2} &= (z_{1} + z_{2}) \overline{(z_{1} + z_{2})} \\
+                                               &= (z_{1} + z_{2}) {(\overline{z_{1}} + \overline{z_{2}})} \\
+                                               &= z_{1}\overline{z_{1}} + z_{1}\overline{z_{2}} + \overline{z_{1}}z_{2} + z_{2}\overline{z_{2}} \\
+                                               &= \abs{z_{1}}^{2} + \abs{z_{2}}^{2} + (z_{1}\overline{z_{2}} + \overline{z_{1}}z_{2}) \\
+                                               &\leq z_{1}\overline{z_{1}} + z_{1}\overline{z_{2}} + 2\abs{z_{1}\overline{z_{2}}} \\
+                                               &\leq (\abs{z_{1}} + \abs{z_{2}})^{2}
+        \end{align*}
+    \end{proof}
+    
     \subsubsection{Construction of Complex Numbers}
     
     \begin{align*}
@@ -579,6 +602,29 @@
     \begin{displaymath}
         \sqrt{z \overline{z}} = \sqrt{a^{2} + b^{2}} = \left| z \right| > 0
     \end{displaymath}
+    
+    \subsection{Inner Product Space}
+    
+    $V$ : vector space over $\mathbb{R}$
+    
+    \begin{align*}
+        V \times V &\rightarrow \mathbb{R} \\
+        (u, v) &\rightarrow (v \mid u) \quad \text{inner product} \\
+    \end{align*}
+    
+    Some properties:
+    
+    We have $\alpha, \beta \in \mathbb{R}$:
+    
+    \begin{enumerate}
+        \item $(u \mid v) = (v \mid u)$
+        \item $(u \mid u) \geq 0 \text{ and } (u \mid u) = 0 \iff u = 0$
+        \item Norm: $\norm{u} = (u \mid u)^{\frac{1}{2}}$
+        \item $(\alpha v + \beta w \mid u) = \alpha (v \mid u) + \beta (w \mid u)$
+        \item $(v \mid \alpha u + \beta w) = \alpha (v \mid u) + \beta (v \mid w)$
+    \end{enumerate}
+    
+    Euclidean inner product: In $\mathbb{R}^{n}, x = \{ x_{1}, x_{2}, \cdots, x_{n} \}, y = \{ y_{1}, y_{2}, \cdots, y_{n} \}$, $(x \mid y) = \sum_{i = 1}^{n} x_{i}y_{i}$
     
     \section{Basic Topology}
 
