@@ -360,8 +360,10 @@
         
         So we have no upper bound property in $E$.
     \end{proof}
-
-    \subsection{Construction of Real Numbers}
+    
+    \subsection{Real Numbers}
+    
+    \subsubsection{Construction of Real Numbers}
 
     \begin{theorem}
         There exists a total ordered field $\mathbb{R}$ which has least upper bound property. So every subset $E \subset \mathbb{R}$, are bounded above, has a supremum.
@@ -476,9 +478,64 @@
         \end{align*}
     \end{proof}
     
+    We then need to show that $E$ is bounded above:
     
+    \begin{proof}
+        Suppose $S \geq x + 1 \Rightarrow S > 1$, so $S^{m} > S^{m - 1} > \cdots > S$, therefore $S^{m} > x + 1 > S$.
+        
+        It follows that if $t \in E$, then $t < x + 1 \Rightarrow x + 1$ is an upper bound of $E$.
+        
+        $\exists y = \sup E, y > 0$
+    \end{proof}
+
+    We claim $y^{n} = x$, since $y^{n} < x$ and $y^{n} > x$ are both contradictions.
     
-    \subsection{Construction of Complex Numbers}
+    For the first case of contradictions:
+    
+    \begin{displaymath}
+        \frac{x - y^{n}}{n (y + 1)^{n - 1}} > 0
+    \end{displaymath}
+    
+    We have $0 < n < 1$ and $h < \frac{x - y^{n}}{n (y + 1)^{n - 1}}$.
+    
+    \begin{displaymath}
+        (y + h)^{n} - y^{n}
+    \end{displaymath}
+    
+    \begin{align*}
+        (y + h)^{n - k - 1} * k &< (y + h)^{n - k - 1} * (y + h)^{k} \\
+                                        &= (y + h)^{n - 1} \\
+                                        &< n * h * (y + h)^{n - 1} < x - y^{n} \\
+                                        \therefore &(y + h)^{n} - y^{n} < x - y^{n} \\
+                                                        &(y + h)^{n} < x \\
+                                                        &y + h \in E \text{ and } \sup E = y < y + h \\
+    \end{align*}
+    
+    Contradiction.
+    
+    For the first case of contradictions:
+    
+    \begin{displaymath}
+        y^{n} > x
+    \end{displaymath}
+    
+    We have $k = \frac{y^{n} - x}{ny^{n - 1}} > 0$.
+    
+    \begin{align*}
+        &\because 0 < k < \frac{y^{n}}{ny^{n - 1}} = \frac{y}{n} < y \\
+        &\therefore 0 < k < y \text{ and } 0 < y - k \leq t \\
+    \end{align*}
+    
+    \begin{align*}
+        y^{n} - t^{n} &\leq y^{n} - (y - k)^{n} \\
+                           &< y^{n - 1} < kny^{n - 1} = y^{n} - x \\
+        \therefore t^{n} &> x \Rightarrow t \notin E \\
+        \therefore y - k \notin E &\text{ is an upper bound of } E \\
+    \end{align*}
+    
+    \subsection{Complex Number}
+    
+    \subsubsection{Construction of Complex Numbers}
     
     \begin{align*}
         \mathbb{R}^{2} &= \{ (a, b) | a, b \in \mathbb{R} \} \text{ forms abelian group} \\
@@ -506,7 +563,7 @@
                         & (a, b) = a \cdot (1, 0) + b \cdot (0, 1) = a + ib \\
     \end{align*}
     
-    \subsection{Automorphism of Complex Numbers}
+    \subsubsection{Automorphism of Complex Numbers}
     
     \begin{align*}
         z = (a, b) \text{ and } \overline{z} &= (a, -b) \text{ (complex conjugate)} \\
