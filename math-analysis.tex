@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsmath, amsthm, amssymb}
-\usepackage{graphicx}
+\usepackage{graphicx, dsfont}
 
 \title{Notes for MATH 3210: Foundation of Analysis I}
 \author{Jing Guo}
@@ -433,8 +433,96 @@
         \end{align*}
     \end{proof}
 
+    \subsubsection{Property of Real Numbers}
+    
+    We have $x > 0, y > 0, n \geq 2$, and $y^{n} = x$, such $y$ is unique.
+    
+    We first need to prove \textbf{uniqueness}:
+    
+    \begin{proof}
+    We have $y_{1}, y_{2} > 0, y_{1}^{n} = x, y_{2}^{n} = x \Rightarrow y_{1} = y_{2}$
+    
+    We assume $y_{1} \neq y_{2}$ and $0 < y_{1} < y_{2}$. If $a > 0$, then $ay_{1} > ay_{2}$.
+    
+    We claim $y_{1}^{n} < y_{2}^{n}$, then we apply mathematical induction:
+    
+    When $n = 1$, $y_{1} < y_{2}$.
+    
+    \begin{align*}
+        y_{1}y_{1}^{n} &< y_{1}^{n}y_{2} < y_{2}y_{2}^{n} \\
+        y_{1}^{n + 1} &< y_{2}^{n + 1} \\
+        \therefore y_{1}^{n} &< y_{2}^{n} \\
+    \end{align*}
+    
+    But they should both be equal to $x$, therefore we have a contradiction.
+    \end{proof}
+    
+    We then need to prove \textbf{existence}:
+    
+    \begin{displaymath}
+        E = \{ t \in \mathbb{R} \mid t^{n} < x, x > 0, x \in \mathbb{R} \}
+    \end{displaymath}
+    
+    \begin{proof}
+        We first need to show that set $E$ is not empty.
+        
+        We construct $t = \frac{x}{x + 1} \Rightarrow 0 < t < 1$ and $t^{n} < t^{n - 1} < \cdots < t < 1$
+        
+        \begin{align*}
+            t = \frac{x}{x + 1} \\
+            x = t + tx \\
+            t = x - tx < x \\
+            \therefore t^{n} < t < x \\
+        \end{align*}
+    \end{proof}
+    
+    
+    
     \subsection{Construction of Complex Numbers}
-
+    
+    \begin{align*}
+        \mathbb{R}^{2} &= \{ (a, b) | a, b \in \mathbb{R} \} \text{ forms abelian group} \\
+        (a, b) + (a', b') &= (a + a', b + b') \quad \therefore (0, 0) = 0 \\
+        -(a, b) &= (-a, -b) \\
+        \text{Multiplication: } (a, b) \cdot (a', b') &= (aa' - bb', a'b + ab') \\
+        \text{Identity for mult.: } (1, 0) &= \mathds{1} \text{ and } (a, b) \cdot (1, 0) = (a, b) \\
+    \end{align*}
+    
+    $\therefore$ $\mathbb{R}^{2}$ is a ring and $(a, b) \neq (0, 0)$.
+    
+    For any such elements, we can form
+    
+    \begin{align*}
+        (a, b)^{-1} = (\frac{a}{a^{2} + b^{2}}, \frac{-b}{a^{2} + b^{2}}) \\
+        (a, b) \cdot (a, b)^{-1} = (1, 0) = \mathds{1} \\
+    \end{align*}
+    
+    $\therefore$ $\mathbb{R}^{2}$ is a field of complex numbers, that is, $\mathbb{C}$.
+    
+    \begin{align*}
+        \because & (0, 1)^{2} = (-1, 0) = \mathds{-1} \\
+                      & (0, -1)^{2} = \mathds{-1} \\
+        \therefore & i = (0, 1) \\
+                        & (a, b) = a \cdot (1, 0) + b \cdot (0, 1) = a + ib \\
+    \end{align*}
+    
+    \subsection{Automorphism of Complex Numbers}
+    
+    \begin{align*}
+        z = (a, b) \text{ and } \overline{z} &= (a, -b) \text{ (complex conjugate)} \\
+        \overline{z_{1} + z_{2}} &= \overline{z_{1}} + \overline{z_{2}} \\
+        \overline{z_{1} * z_{2}} &= \overline{z_{1}} * \overline{z_{2}} \\
+        z * \overline{z} = (a, b) * (a, -b) &= (a^{2} + b^{2}, 0) = (a^{2}, b^{2}) \\
+    \end{align*}
+    
+    We can extend from $\mathbb{R}$ to $\mathbb{C}$, so we have $a \in \mathbb{R}$ and $(a, 0) \in \mathbb{C}$, therefore $\mathbb{R}$ is a subfield of $\mathbb{C}$.
+    
+    Absolute value of complex number $z$:
+    
+    \begin{displaymath}
+        \sqrt{z \overline{z}} = \sqrt{a^{2} + b^{2}} = \left| z \right| > 0
+    \end{displaymath}
+    
     \section{Basic Topology}
 
         Metric (distance function) of $x_{0}$ and $x$: $d(x_{0}, x) = \lvert x - x_{0} \rvert$
