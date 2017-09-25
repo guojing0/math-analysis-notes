@@ -717,7 +717,39 @@
         \begin{proof}
             Suppose $x$ in the left and $y$ in the right, so $x \notin \cup U_{i}$, then $x \notin U_{i}$, so $x \in U_{i}^{C}$ for any $i$, so $x$ in the right. Conversely, we can prove that $y$ in the left. Therefore it follows that left equals to right.
         \end{proof}
-
+    
+        Properties of open sets:
+        
+        \begin{enumerate}
+            \item $\emptyset \in S$ is open;
+            \item $S$ itself is open;
+            \item If $U_{i}, i \in I$ is a family of open sets, then $\bigcup_{i \in I} U_{i}$ is an open set. (Union of arbitrary (finite and infinite) collection of open sets is open)
+            
+            \begin{proof}
+                If $x \in \bigcup_{i \in I} U_{i}$, $x \in U_{i}$, so there exists $r > 0$, such that $B_{r}(x) \in U_{i} \Rightarrow B_{r}(x) \subset \bigcup_{i \in I} U_{i}$.
+            \end{proof}
+        
+            \item Intersection of \textit{finite} open sets is open. (Why not infinite: consider $\bigcap_{n = 1}^{\infty} B_{\frac{1}{n}} (x) = \{ x \}$, where $0 < \epsilon < 1$, which is not an open set.)
+            
+            \begin{proof}
+                If $x \in \bigcap_{i \in I}^{n} U_{i}$, then $x \in U_{i}$. So $U_{i}$ is open and $B_{r}(x) \subset U_{i}$. Let $\rho = \min (r_{1}, r_{2}, \cdots, r_{n}) > 0$, $B_{\rho} (x) \subset B_{r_{i}}(x) \subset \bigcap_{i \in I}^{n} U_{i} \Rightarrow B_{\rho}(x) \subset \bigcap_{i \in I}^{n} U_{i}$.
+            \end{proof}
+        \end{enumerate}
+    
+        \subsection{Closed Sets}
+        
+        $Z \subset S$ is closed if $Z^{C}$ is open.
+        
+        Third part of last subsection implies that $\bigcup_{i \in I} Z_{i}^{C}$ is open, which means that $\bigcap_{i \in I} Z_{i}$ is closed. Similarly, fourth part of last subsection implies that $\bigcup_{i = 1}^{n} Z_{i}$ is closed.
+        
+        Example (Chaos/Indiscrete topology): If $S \neq \emptyset$,then $u = \{ \emptyset, S \}$. $(S, \{ \emptyset, S \})$ is called a discrete space.
+    
+        \subsection{Compact Sets}
+    
+        In metric space $X$, compact sets are \underline{closed}.
+    
+        Compact $\Leftrightarrow$ closed and bounded (only for Euclidean metric, $\mathbb{R}^{n}$)
+    
         \subsection{Topological Spaces $(X, U)$}
 
         Let $U$ be a family of all sets, $X$ be a set. $U$ is a \textbf{topology} on $X$ if
@@ -737,11 +769,9 @@
         \end{gather*}
 
         Infinite case: For example, the intersection of all intervals of $( -\frac{1}{n}, \frac{1}{n})$, where $n$ is a positive number, is the set $\{ 0 \}$ which is not open in the real line.
-
-    \subsection{Compact Sets}
-
-        In metric space $X$, compact sets are \underline{closed}.
-
-        Compact $\Leftrightarrow$ closed and bounded (only for Euclidean metric, $\mathbb{R}^{n}$)
+        
+        Remark: Some topological spaces are not metric.
+        
+        Discrete topology: $(S, d)$ is discrete metric, and $B_{\frac{1}{2}} (x) = \{ x \}$ since all subsets of $S$ are open.
 
 \end{document}
