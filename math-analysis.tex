@@ -663,7 +663,7 @@
     \subsection{Metric Space $M$}
 
         \begin{displaymath}
-        d \colon M \times M \to \mathbb{R}
+        d \colon M \times M \to \mathbb{R}_{+}
         \end{displaymath}
 
         \begin{enumerate}
@@ -672,27 +672,53 @@
             \item $d(x_{0}, x_{1}) = d(x_{1}, x_{0})$ (irrespective of order)
             \item $d(x, z) \leq d(x, y) + d(y, z)$ (triangular inequity)
         \end{enumerate}
+    
+        Norm in metric space: $d(u, v) = \norm{u - v} \geq 0$
+        
+        $\norm{u - v} = \norm{(u - w) + (w - v)} \leq \norm{u - w} + \norm{w - v}$
 
-        Euclidean metric on $\mathbb{R}^{2}$:
+        Euclidean metric in $\mathbb{R}^{2}$:
         $d(x, y) = \sqrt{(x_{1} - y_{1})^{2} + (x_{2} - y_{2})^{2}}$
+        
+        Euclidean metric in $\mathbb{R}^{n}$: $d(u, v) = (\sum_{i - 1}^{n} (u_{i} - v_{i})^{2})^{\frac{1}{2}}$
 
         Discrete metric: $d(x, y) = \left\{\begin{matrix}
         1 &\mbox{if}\ x \neq y \\
         0 &\mbox{if}\ x = y 
         \end{matrix}\right.$
+        
+        Discrete metric is open and closed.
 
         Open ball of radius $\epsilon$:
         $B_{\epsilon}(x_{0}) = B(x_{0}, \epsilon) = \{ y \in M \mid d(x_{0}, y) < \epsilon \}$
+        
+        Open ball in $M$ centered in $x$ of radius $\epsilon / r$, and Rudin called it "neighborhood."
+        
+        Example: In discrete metric, if $r > 1$, $y \in B_{r}(x) \Rightarrow d(x, y) < r \Rightarrow B_{r}(x) = S$; if $r \leq 1$, $B_{r}(x) = \{ x \}$
 
-    \subsection{Open Sets}
+        \subsection{Open Sets}
 
-        \subsubsection{Metric Spaces $X$}
-
-        $U \subset X$ is open if for any $x \in U$ there exists $\epsilon > 0$ such that $B(x, \epsilon) \subset U$.
+        $U \subset X$ is open (without boundary) if for any $u \in U$ there exists $r > 0$ such that $B(u, r) \subset U$.
 
         Open interval is open set; closed interval is not open set.
+        
+        Prove $B_{r}(x)$ is an open set (https://math.stackexchange.com/questions/104083/an-open-ball-is-an-open-set):
+        
+        \begin{proof}
+            $y \in B_{r}(x)$ and $\delta = d(x, y)$, so $\epsilon < r - \delta$. We have $z \in B_{\epsilon}(y)$, so $d(x, z) < \delta + \epsilon < r$, therefore $z \in B_{\epsilon}(y) \Rightarrow z \in B_{r}(x)$.
+        \end{proof}
+    
+        \begin{theorem}
+            \begin{displaymath}
+                (\bigcup_{i \in I} U_{i})^{C} = \bigcap_{i \in I} U_{i}^{C}
+            \end{displaymath}
+        \end{theorem}
+    
+        \begin{proof}
+            Suppose $x$ in the left and $y$ in the right, so $x \notin \cup U_{i}$, then $x \notin U_{i}$, so $x \in U_{i}^{C}$ for any $i$, so $x$ in the right. Conversely, we can prove that $y$ in the left. Therefore it follows that left equals to right.
+        \end{proof}
 
-        \subsubsection{Topological Spaces $(X, U)$}
+        \subsection{Topological Spaces $(X, U)$}
 
         Let $U$ be a family of all sets, $X$ be a set. $U$ is a \textbf{topology} on $X$ if
 
