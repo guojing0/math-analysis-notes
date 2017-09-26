@@ -773,5 +773,32 @@
         Remark: Some topological spaces are not metric.
         
         Discrete topology: $(S, d)$ is discrete metric, and $B_{\frac{1}{2}} (x) = \{ x \}$ since all subsets of $S$ are open.
+        
+                $U \subset S$, $\bar{U}$ is the smallest closed set that contains $U$, and it is the closure of $U$. $U^{o}$ is the largest open set contained in $U$, and it is the interior of $U$.
+        
+        Since $T^{o} \subset T \subset \bar{T}$ ,boundary of $T$:
+        
+        \begin{displaymath}
+        \partial T = \bar{T} - T^{o}
+        \end{displaymath}
+        
+        Example: We have $\mathbb{Q} \subset \mathbb{R}$, so $\mathbb{Q}^{o} (\emptyset) \subset \mathbb{Q} \subset \bar{\mathbb{Q}} (\mathbb{R})$, so the boundary is $\mathbb{R}$, which is much larger than $\mathbb{Q}$.
+        
+        Example: In discrete topology, $T^{o} = T = \bar{T}$, so $\partial T = \emptyset$.
+        
+        \subsection{Continuous Map}
+        
+        We have two topological spaces, $(S, U)$ and $(T, V)$. A function $f : S \rightarrow T$ is continuous if $\forall v \in V, f^{-1} (V) \in U$, where $f^{-1}(V) = \{ u \in S \mid f(u) \in V \}$.
+        
+        Identity map: $id : S \rightarrow S$ is continuous.
+        
+        Composition: $(g \circ f) (s) = g(f(s))$; if $f$ and $g$ are continuous, then $f \circ g$ is continuous.
+        
+        Example:
+        
+        \begin{enumerate}
+            \item $S \text{ (discrete topology) } \rightarrow T$ all functions from $S$ to $T$ with $f$ is continuous.
+            \item $S \rightarrow T \text{ (indiscrete topology)}$, $f^{-1}(\emptyset) = \emptyset$ and $f^{-1}(T) = S$ are both open.
+        \end{enumerate}
 
 \end{document}
