@@ -800,5 +800,21 @@
             \item $S \text{ (discrete topology) } \rightarrow T$ all functions from $S$ to $T$ with $f$ is continuous.
             \item $S \rightarrow T \text{ (indiscrete topology)}$, $f^{-1}(\emptyset) = \emptyset$ and $f^{-1}(T) = S$ are both open.
         \end{enumerate}
+    
+        \subsection{Hausdorff Space}
+        
+        A topological space is \textit{Hausdorff} if any two distinct points $x, y \in S$ are separated by open sets, that is, $x \in U, y \in V$, $U, V \subset S$, and $U \cap V = \emptyset$.
+        
+        \begin{theorem}
+            Every metric space is Hausdorff.
+        \end{theorem}
+    
+        \begin{proof}
+            We have two distinct points $x$ and $y$ in topological space, and $\epsilon = d(x, y) > 0$.
+            
+            Suppose point $z \in B_{\frac{\epsilon}{3}} (x) \cap B_{\frac{\epsilon}{3}} (y)$, so $d(x, z) < \frac{\epsilon}{3}$ and $d(y, z) < \frac{\epsilon}{3}$.
+            
+            Due to triangular inequity, $d(x, y) < \frac{\epsilon}{3} + \frac{\epsilon}{3} < \epsilon$, which implies such point $z$ does not exist, that is, intersection does not exist. 
+        \end{proof}
 
 \end{document}
