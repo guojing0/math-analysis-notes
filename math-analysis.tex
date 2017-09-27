@@ -660,7 +660,7 @@
 
         Metric (distance function) of $x_{0}$ and $x$: $d(x_{0}, x) = \lvert x - x_{0} \rvert$
 
-    \subsection{Metric Space $M$}
+    \subsection{Metric Space}
 
         \begin{displaymath}
         d \colon M \times M \to \mathbb{R}_{+}
@@ -688,13 +688,21 @@
         \end{matrix}\right.$
         
         Discrete metric is open and closed.
+        
+        \subsection{Open Ball and Neighborhood}
+        
+        \subsubsection{Open Ball}
 
         Open ball of radius $\epsilon$:
         $B_{\epsilon}(x_{0}) = B(x_{0}, \epsilon) = \{ y \in M \mid d(x_{0}, y) < \epsilon \}$
         
         Open ball in $M$ centered in $x$ of radius $\epsilon / r$, and Rudin called it "neighborhood."
         
-        Example: In discrete metric, if $r > 1$, $y \in B_{r}(x) \Rightarrow d(x, y) < r \Rightarrow B_{r}(x) = S$; if $r \leq 1$, $B_{r}(x) = \{ x \}$
+        Example: In discrete metric, if $r > 1$, $y \in B_{r}(x) \Rightarrow d(x, y) < r \Rightarrow B_{r}(x) = S$; if $r \leq 1$, $B_{r}(x) = \{ x \}$.
+        
+        \subsubsection{Neighborhood}
+        
+        $U$ is a \textit{neighborhood} of $x$ if $x \in U^{o}$. Open neighborhood of $x$ is any open set containing $x$.
 
         \subsection{Open Sets}
 
@@ -749,6 +757,22 @@
         In metric space $X$, compact sets are \underline{closed}.
     
         Compact $\Leftrightarrow$ closed and bounded (only for Euclidean metric, $\mathbb{R}^{n}$)
+        
+        \textbf{Open cover}: An open cover of a set $Z$ is a collection $(U_{i}, i \in I)$ of open sets, such that $Z \subset \bigcup_{i \in I} U_{i}$.
+        
+        Not-so-useful definition: A set $C \subset S$ is compact if for any open cover, there exists a finite subcover that contains $C$.
+        
+        Examples:
+        
+        \begin{enumerate}
+            \item $\mathbb{R}^{2}$ is not a compact set.
+            \item Any finite set is compact, or if $C_{1}, C_{2}, \cdots, C_{n}$ is compact, then $\bigcup_{i = 1}^{n} C_{i}$ is also compact.
+            \item $S$ is a discrete space, $C \subset S$ is compact. $\forall c \in C$, $\{ c \}$ is open, so $\bigcup_{c \in C} \{ c \} = C \Rightarrow$ $C$ is finite so it is compact. Therefore in discrete space, all finite sets are compact.
+        \end{enumerate}
+        
+        \begin{theorem}
+            $S$ is a topological space and $C$ is a compact set in $S$ and $z \in C$ is a closed set, then $z$ is compact.
+        \end{theorem}
     
         \subsection{Topological Spaces $(X, U)$}
 
